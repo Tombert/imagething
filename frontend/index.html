@@ -3,8 +3,55 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Shameless Imgur Clone</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-	
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-heading"><strong>Upload Images</strong></div>
+			<div class="panel-body">
+
+				<!-- Standar Form -->
+				<h4>Select files from your computer</h4>
+				<form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+					<div class="form-inline">
+						<div class="form-group">
+							<input type="file" name="files[]" id="js-upload-files" multiple>
+						</div>
+						<button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+					</div>
+				</form>
+
+				<!-- Drop Zone -->
+				<h4>Or drag and drop files below</h4>
+				<div class="upload-drop-zone" id="drop-zone">
+					Just drag and drop files here
+				</div>
+
+				<!-- Progress Bar -->
+				<div class="progress">
+					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+						<span class="sr-only">60% Complete</span>
+					</div>
+				</div>
+
+				<!-- Upload Finished -->
+				<div class="js-upload-finished">
+					<h3>Processed files</h3>
+					<div class="list-group">
+						<a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>porn.jpg</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- /container -->
 </body>
 </html>
