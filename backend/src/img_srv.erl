@@ -30,7 +30,10 @@ init(Args) ->
     {ok, Pid} = riakc_pb_socket:start_link("127.0.0.1", 8087).
     {ok, #{riak => RiakPid}}.
 
-handle_call(_Request, _From, State) ->
+handle_call({put_image, Image}, _From, #{riak => RiakPid}) ->
+    ImgData = base64:encode(Image),
+    Object = riakc_obj:new(<<"images">>, erlang:md5(ImgData), term_to_binary(ImgData)),
+    riakc_pb_socket:put(RiakPid, Object),
     {reply, ok, State}.
 
 handle_cast(_Msg, State) ->
