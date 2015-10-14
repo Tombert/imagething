@@ -27,7 +27,8 @@ start_link() ->
 %% ------------------------------------------------------------------
 
 init(Args) ->
-    {ok, Args}.
+    {ok, Pid} = riakc_pb_socket:start_link("127.0.0.1", 8087).
+    {ok, #{riak => RiakPid}}.
 
 handle_call(_Request, _From, State) ->
     {reply, ok, State}.
