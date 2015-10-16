@@ -5,7 +5,10 @@
   {registered, []},
   {applications, [
                   kernel,
-                  stdlib
+                  stdlib,
+                  ranch,
+                  cowlib,
+                  cowboy
                  ]},
   {mod, { img_app, []}},
   {env, []}
