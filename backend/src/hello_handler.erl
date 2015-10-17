@@ -8,8 +8,8 @@
 -record(state, {
 }).
 
-init(Req, [RiakPid]) ->
-    State = #{riak => RiakPid},
+init(Req, Blah) ->
+    State = 4,
     
     handle(Req, State).
 

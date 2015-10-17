@@ -32,6 +32,7 @@ hexstring(Binary) when is_binary(Binary) ->
         binary_to_list(Binary))).
 
 init(Args) ->
+    io:format("Hello!",[]),
     {ok, Pid} = riakc_pb_socket:start_link("127.0.0.1", 8087),
     {ok, #{riak => Pid}}.
 

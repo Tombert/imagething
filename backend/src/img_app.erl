@@ -11,6 +11,8 @@
 
 start(_StartType, _StartArgs) ->
     {ok, Pid} = img_sup:start_link(), 
+
+
     Dispatch = cowboy_router:compile([
         {'_', [
                {"/", hello_handler, [Pid]}, 
